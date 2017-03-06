@@ -1,0 +1,38 @@
+Calibration
+Soft independent modelling by class analogy
+Variable kernel density estimation
+Boosting	AdaBoost	Adaptive Boosting	BrownBoost	LogitBoost
+ALOPEX
+Analogical modeling
+Artificial neural Network	Radial basis function network
+decision tree	C4.5	Alternating decision tree	ADTree	 ID3
+Cascading
+Case-based reasoning
+Sukhotin's algorithm
+Classifier chains
+Co-training
+CoBoosting
+Compositional pattern-producing network
+Conceptual clustering
+Hierarchical classifier
+Information Fuzzy Networks
+k-nearest neighbors	KNN	k-NN
+kernel methods
+Large margin nearest neighbor	LMNN
+Latent class model	LCM
+Learning vector quantization	LVQ
+support vector machine	SVM
+Linear classifier
+Linear discriminant analysis
+Margin Infused Relaxed algorithm	MIRA
+Multilayer perceptron	MLP
+logistic regression
+Naive Bayes
+Nearest centroid Classifier	nearest prototype classifier
+Perceptron
+Probit model
+Quadratic classifier
+Random forest
+Recurrent neural network
+maximum entropy	Multinomial logistic regression
+softmax regression
