@@ -12,6 +12,9 @@ def parse_references_with_index(indexpath):
     count =0
     for path in open(indexpath):
         count+=1
+        if not path.endswith('.nxml'):
+            continue
+
         if count%100==1:
             sys.stderr.write('{:}\n'.format(count))
         path = path.strip()
