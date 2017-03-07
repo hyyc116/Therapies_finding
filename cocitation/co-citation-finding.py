@@ -14,7 +14,7 @@ def parse_references_with_index(indexpath):
         for title in parse_pmc_references(doc):
             titles.append(title)
 
-        headers = ' '.join(titles)
+        headers = '. '.join(titles)+"."
 
         doi = parse_pmc_doi(doc)
 
