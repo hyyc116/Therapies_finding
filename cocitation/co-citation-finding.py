@@ -12,7 +12,7 @@ def parse_references_with_index(indexpath):
     count =0
     for path in open(indexpath):
         count+=1
-        if not path.endswith('.nxml'):
+        if not path.strip().endswith('.nxml'):
             continue
 
         if count%100==1:
