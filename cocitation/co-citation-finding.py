@@ -3,6 +3,8 @@ import sys
 sys.path.append(".")
 sys.path.append("..")
 from tools.xml_parser import *
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 
 #Get references
