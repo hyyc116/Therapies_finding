@@ -5,6 +5,7 @@ sys.path.append("..")
 from tools.xml_parser import *
 reload(sys)
 sys.setdefaultencoding('utf-8')
+import re
 
 
 #Get references
@@ -23,7 +24,7 @@ def parse_references_with_index(indexpath):
         for title in parse_pmc_references(doc):
             titles.append(title)
 
-        headers = '. '.join(titles)+"."
+        headers = re.sub(r"\s+",' ','. '.join(titles)+".")
 
         doi = parse_pmc_doi(doc)
 
