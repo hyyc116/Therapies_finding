@@ -9,7 +9,11 @@ sys.setdefaultencoding('utf-8')
 
 #Get references
 def parse_references_with_index(indexpath):
+    count =0
     for path in open(indexpath):
+        count+=1
+        if count%100==1:
+            sys.stderr.write('{:}\n'.format(count))
         path = path.strip()
         doc = parse_doc(path)
         titles = []
@@ -21,6 +25,8 @@ def parse_references_with_index(indexpath):
         doi = parse_pmc_doi(doc)
 
         print doi+"\t"+headers.encode('utf-8')
+
+
 
 if __name__=="__main__":
     parse_references_with_index(sys.argv[1])
