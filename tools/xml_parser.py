@@ -10,9 +10,13 @@ def parse_doc(path):
 def parse_with_selector(doc,selector):
     return doc.select(selector)
 
+def parse_pmc_doi(doc):
+    dois=[]
+    for doi in parse_with_selector(doc,'article-id[pub-id-type="pmc"]'):
+        dois.append(doi.get_text())
+    return dois[0]
 
-def parse_pmc_references(path):
-    doc = parse_doc(path)
+def parse_pmc_references(doc):
     eles =parse_with_selector(doc,'ref-list ref article-title')
     for ele in eles:
         yield ele.get_text().strip()
@@ -28,6 +32,7 @@ def filter_papers_with_disease(name,indexpath):
             print path
 
 if __name__=="__main__":
-    filter_papers_with_disease(sys.argv[1],sys.argv[2])
+    print parse_pmc_doi('../pmc.xml')
+    
 
 
