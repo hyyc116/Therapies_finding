@@ -12,8 +12,8 @@ The co-occurrence in reference list is kind of latent knowledge.
 PubMed Central
 
 =============================
-Procedures:
-####1. Fetch full text papers contained "Stroke" related concept.
+To a given disease name 'D', the procedures:
+####1. Fetch full text papers contained "D".
 
 
 ####2. Extract therapies co-occurred with stroke from reference list.
