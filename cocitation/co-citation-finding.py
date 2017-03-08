@@ -68,7 +68,7 @@ def parse_body_abstext(path):
     for p in content:
         ps.append(re.sub(r'\s+'," ",p.get_text()))
 
-    print " ".join(ps)
+    return " ".join(ps)
 
 
 if __name__=="__main__":
