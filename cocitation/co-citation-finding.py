@@ -40,7 +40,7 @@ def parse_indexes(indexpath,nplist):
         if not path.strip().endswith('.nxml'):
             continue
 
-        if count%1000==1:
+        if count%10==1:
             sys.stderr.write('{:}\n'.format(count))
 
         path = path.strip()
