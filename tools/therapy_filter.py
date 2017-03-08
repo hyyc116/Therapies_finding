@@ -48,7 +48,7 @@ def filter_therapy(path):
         # dic[therapy] = dic.get(therapy,0)+1
     for therapy in therapy_dict.keys():
         df = len(set(therapy_dict[therapy]))
-        if df>10:
+        if df>4:
             dic[therapy] = df
 
 
