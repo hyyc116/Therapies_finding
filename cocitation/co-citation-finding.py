@@ -54,10 +54,10 @@ def parse_indexes(indexpath,nplist):
             if np in content:
                 tf_dic[np].append(path)
 
-        open("parkinson-tf.dict",'w').write(json.dumps(tf_dic))
+    open("parkinson-tf.dict",'w').write(json.dumps(tf_dic))
 
-        for np in tf_dic.keys():
-            print np+"\t"+len(set(tf_dic[np]))
+    for np in tf_dic.keys():
+        print np+"\t"+str(len(set(tf_dic[np])))
         
 
 def parse_body_abstext(path):
