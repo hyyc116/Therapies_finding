@@ -78,7 +78,7 @@ if __name__=="__main__":
     elif clas=='parse_indexes':
         indexpath=sys.argv[2]
         dfpath=sys.argv[3]
-        nplist = [line.strip().split('\t')[0] for line in open(dfpath)]
+        nplist = [re.sub(r'\s+'," ",line.strip().split('\t')[0].replace("-"," ")) for line in open(dfpath)]
         parse_indexes(indexpath,nplist)
 
 
