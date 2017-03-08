@@ -49,12 +49,12 @@ def filter_therapy(path):
     for therapy in therapy_dict.keys():
         df = len(set(therapy_dict[therapy]))
         if df>10:
-            print therapy+"\t"+str(df)
+            dic[therapy] = df
 
 
-    # for k,v in sorted(dic.items(),key=lambda x:x[1], reverse=True):
-        # if v>0:
-            # print k+"\t"+str(v)
+
+    for k,v in sorted(dic.items(),key=lambda x:x[1], reverse=True):
+        print k+"\t"+str(v)
 
 
 
