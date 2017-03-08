@@ -1,11 +1,13 @@
 #coding:utf-8
 
 import sys
+from collections import  defaultdict
 
 def filter_therapy(path):
-    filters=['therapy','training','treatment',"treatments",'stimulation','program']
+    filters=['therapy','movement','training','treatment',"treatments",'stimulation','program']
     infilter=['practice']
     therapy_set=[]
+    therapy_dict=defaultdict(list)
     for line in open(path):
         line = line.strip()
         splits = line.split("\t")
@@ -32,19 +34,27 @@ def filter_therapy(path):
             for word in filters:
                 if splits[1].endswith(word):
                     therapy_set.append(splits[1]+"\t"+splits[2])
+                    therapy_dict[splits[1]+"\t"+splits[2]].append(pmcid)
             
             #in filters
             for word in infilter:
                 if word in splits[1]:
                     therapy_set.append(splits[1]+"\t"+splits[2])
+                    therapy_dict[splits[1]+"\t"+splits[2]].append(pmcid)
 
     dic={}
-    for therapy in therapy_set:
-        dic[therapy] = dic.get(therapy,0)+1
 
-    for k,v in sorted(dic.items(),key=lambda x:x[1], reverse=True):
-        if v>0:
-            print k+"\t"+str(v)
+    # for therapy in therapy_set:
+        # dic[therapy] = dic.get(therapy,0)+1
+    for therapy in therapy_dict.keys():
+        df = len(set(therapy_dict[therapy]))
+        if df>10:
+            print therapy+"\t"+str(df)
+
+
+    # for k,v in sorted(dic.items(),key=lambda x:x[1], reverse=True):
+        # if v>0:
+            # print k+"\t"+str(v)
 
 
 

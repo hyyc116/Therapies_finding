@@ -22,10 +22,12 @@ To a given disease name "D", the procedures:
 2. From titles of references, stat the count of therapies co-occurrence with disease "D".
 
         python cocitation/co-citation-finding.py [paths.txt] > pmc_refereces_title.txt
-        python np_extractor.py [D]_NPs.txt pmc_refereces_title.txt 1>>[D]_NPs.txt 2>run.log 
+        python tools/np_extractor.py [D]_NPs.txt pmc_refereces_title.txt 1>>[D]_NPs.txt 2>run.log 
 
 
 3. Filter and sort the therapies.
+        
+        
 
 4. Human checking.
 
