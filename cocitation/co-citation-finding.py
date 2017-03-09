@@ -34,6 +34,7 @@ def parse_references_with_index(indexpath):
 #get body text
 def parse_indexes(indexpath,nplist):
     count=0
+    find_doc_count=0
     tf_dic=defaultdict(list)
     for path in open(indexpath):
         count+=1
@@ -41,14 +42,19 @@ def parse_indexes(indexpath,nplist):
             continue
 
         if count%10==1:
-            sys.stderr.write('{:}\n'.format(count))
+            sys.stderr.write('PROGRESS:{:},'.format(count))
+            sys.stderr.write('find {:} docs.\n'.format(count))
 
         path = path.strip()
-        content = parse_body_abstext(path)
+
+        
+        content = open(path).read().lower()
 
         if "parkinson's disease"  not in content:
             continue
 
+        find_doc_count+=1
+        content = parse_body_abstext(path)
         content = re.sub(r'\s+'," ",content.replace('-'," ").lower())
         for np in nplist:
             if np in content:
@@ -69,6 +75,7 @@ def parse_body_abstext(path):
         ps.append(re.sub(r'\s+'," ",p.get_text()))
 
     return " ".join(ps)
+
 
 
 if __name__=="__main__":
