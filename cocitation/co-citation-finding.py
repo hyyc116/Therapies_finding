@@ -43,7 +43,7 @@ def parse_indexes(indexpath,nplist):
 
         if count%10==1:
             sys.stderr.write('PROGRESS:{:},'.format(count))
-            sys.stderr.write('find {:} docs.\n'.format(count))
+            sys.stderr.write('find {:} docs.\n'.format(find_doc_count))
 
         path = path.strip()
 
