@@ -28,7 +28,7 @@ To a given disease name "D", the procedures:
 3. Filter and sort the therapies.
         
         python tools/therapy_filter.py [D]_NPs.txt > [D]_ref_df.txt
-
+        
         
 
 

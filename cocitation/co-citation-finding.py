@@ -82,7 +82,7 @@ if __name__=="__main__":
     clas = sys.argv[1]
     if clas=='ref':
         parse_references_with_index(sys.argv[1])
-    elif clas=='parse_indexes':
+    elif clas=='tf':
         indexpath=sys.argv[2]
         dfpath=sys.argv[3]
         nplist = [re.sub(r'\s+'," ",line.strip().split('\t')[0].replace("-"," ")) for line in open(dfpath)]
