@@ -109,7 +109,7 @@ if __name__=="__main__":
         nplist = [re.sub(r'\s+'," ",line.strip().split('\t')[0].replace("-"," ")) for line in open(dfpath)]
         parse_indexes(indexpath,nplist)
     elif clas=='score':
-        score_therapies(sys.argv[1],sys.argv[2])
+        score_therapies(sys.argv[2],sys.argv[3])
 
 
 
