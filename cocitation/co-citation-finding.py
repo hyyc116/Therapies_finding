@@ -77,6 +77,27 @@ def parse_body_abstext(path):
     return " ".join(ps)
 
 
+def score_therapies(df_path,tf_path):
+    df_dict=defaultdict(int)
+    tf_dict = defaultdict(int)
+    for line in open(df_path):
+        splits = line.split("\t")
+        therapy = re.sub(r'\s+'," ",splits[0].replace("-"," "))
+        df_dict[therapy]=int(splits[2])
+
+    for line in open(tf_path):
+        splits = line.split("\t")
+        tf_dict[splits[0]] = int(splits[1])
+
+    results=defaultdict(float)
+    for t in df_dict.keys():
+        tf = tf_dict.get(t,0.5):
+        result[t]=df_dict[t]/float(tf)
+
+    for k,v in sorted(results.items(),key=lambda x:x[1],reverse=True):
+        print "{:}\t{:.5f}".format(k,v)
+
+
 
 if __name__=="__main__":
     clas = sys.argv[1]
@@ -87,6 +108,9 @@ if __name__=="__main__":
         dfpath=sys.argv[3]
         nplist = [re.sub(r'\s+'," ",line.strip().split('\t')[0].replace("-"," ")) for line in open(dfpath)]
         parse_indexes(indexpath,nplist)
+    elif clas=='score':
+        score_therapies(sys.argv[1],sys.argv[2])
+
 
 
 

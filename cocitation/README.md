@@ -25,14 +25,19 @@ To a given disease name "D", the procedures:
         python tools/np_extractor.py [D]_NPs.txt pmc_refereces_title.txt 1>>[D]_NPs.txt 2>run.log 
 
 
-3. Filter and sort the therapies.
+3. Filter the therapies.
         
         python tools/therapy_filter.py [D]_NPs.txt > [D]_ref_df.txt
-        
-        
 
+4. Get the co-occurrence count of each therapies in body text in pmc articles.
+        
+        python tools/co-citation-finding.py tf [pmc index path] [[D]_ref_df.txt] 1>tf.txt 2>run.log
 
-4. Human checking.
+5. Calculate score of each therapy
+        
+        python tools/co-citation-finding.py score [[D]_ref_df.txt] [tf.txt] > score.txt
+
+6. Human checking
 
 
 ####Usage:
