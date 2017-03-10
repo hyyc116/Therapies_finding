@@ -95,7 +95,7 @@ def score_therapies(df_path,tf_path):
         results[t]=df_dict[t]/float(tf)
 
     for k,v in sorted(results.items(),key=lambda x:x[1],reverse=True):
-        print "{:}\t{:.5f}\t{:}\t{:}".format(k,v,df[k],tf.get(k,0.5))
+        print "{:}\t{:.5f}\t{:}\t{:}".format(k,v,df_dict[k],tf_dict.get(k,0.5))
 
 
 
