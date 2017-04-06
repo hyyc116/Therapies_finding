@@ -1,4 +1,4 @@
-##Co-citation
+## Co-citation
 
 
 This directory mainly include co-citation based therapy finding.
@@ -8,7 +8,7 @@ Authors cite articles since each one help authors.
 Even authors themselves hardly tell why they will cite two articles simultaneously.  
 The co-occurrence in reference list is kind of latent knowledge. 
 
-##Dataset
+## Dataset
 [PubMed Central](https://www.ncbi.nlm.nih.gov/pmc/)
 
 ##Procedures
@@ -40,6 +40,6 @@ To a given disease name "D", the procedures:
 6. Human checking
 
 
-####Usage:
+#### Usage:
 
 
