@@ -11,7 +11,7 @@ The co-occurrence in reference list is kind of latent knowledge.
 ## Dataset
 [PubMed Central](https://www.ncbi.nlm.nih.gov/pmc/)
 
-##Procedures
+## Procedures
 To a given disease name "D", the procedures:
 
 1. Fetch full text papers contained "D".
@@ -39,7 +39,5 @@ To a given disease name "D", the procedures:
 
 6. Human checking
 
-
-#### Usage:
 
 
